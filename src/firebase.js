@@ -1,16 +1,19 @@
 import firebase from 'firebase'
 import { ref, onUnmounted } from 'vue' // 1: Will be used in our CRUD functions
 
+//Login details
 const config = {
-  apiKey: "AIzaSyBBvoftYD5JULC6HNa_XAZRADLRmX7PfBY",
-  authDomain: "exa-mmd2-2021-fb-crud-log-lang.firebaseapp.com",
-  projectId: "exa-mmd2-2021-fb-crud-log-lang",
-  storageBucket: "exa-mmd2-2021-fb-crud-log-lang.appspot.com",
-  messagingSenderId: "1015900611728",
-  appId: "1:1015900611728:web:63973bb533d48cf5e82415"
+    apiKey: "AIzaSyAvCbO5jzCQv1SWpc-G1aLfbNSEoHhI64s",
+    authDomain: "scout-2021-mmd-project.firebaseapp.com",
+    projectId: "scout-2021-mmd-project",
+    storageBucket: "scout-2021-mmd-project.appspot.com",
+    messagingSenderId: "252888022524",
+    appId: "1:252888022524:web:b801e4f5e1b7133f018679"
 }
 
+//start fb
 const firebaseApp = firebase.initializeApp(config)
+
 
 const db = firebaseApp.firestore()   // 1:  saving into a const variable
 const projectCollection = db.collection('projects') // 1:  grab the collection from firestore
@@ -45,6 +48,7 @@ export const deleteProject = id => {
 // to do this we add a listener(onSnapshot) on projectCollections so 
 // it updates whenever a change is detected
 
+// ...=spread operater
 
 export const useLoadProjects = () => {
   const projects = ref([])
